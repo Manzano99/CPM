@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- ReqI1 -->
+<head>
+  <meta charset="UTF-8">
+  <title>Vehicle Catalog - AutoElite</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="I18n.js" defer></script>
+  <script src="codigo.js" defer></script>
+</head>
+<body>
+  <div id="contenedor">
+    <header>
+	  <a href="principal.html">
+	  <img src="multimedia/logo_autoelite.png" alt="Logo AutoElite" id="logo"> </a>
+      <h1>Vehicle Catalog</h1>
+      <nav>
+        <ul>
+          <li><a href="principal.html">Home</a></li>
+          <li><a href="coches_en.html">Catalog</a></li>
+          <li><a href="contacto.html">Contact for testing</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+	  <div style="text-align: right; margin: 10px;">
+		<a href="coches_es.html" style="
+		background-color: #0057b8;
+		color: white;
+		padding: 8px 12px;
+		border-radius: 5px;
+		text-decoration: none;
+		font-weight: bold;
+		">Versión en español</a>
+	  </div>
+      <section>
+        <h2>Price Calculator</h2>
+
+        <label for="precioBase">Base price ($):</label>
+        <input type="number" id="precioBase" name="precioBase"> <!-- ReqI6 -->
+        
+        <label for="impuestos">Tax rate (%):</label>
+        <input type="number" id="impuestos" name="impuestos">
+
+        <label for="fechaEntrega">Estimated delivery date:</label>
+        <input type="date" id="fechaEntrega" name="fechaEntrega"> <!-- ReqI7 -->
+
+        <button onclick="actualizarPrecios('precioBase', 'impuestos', 'resultadoDecimal', 'resultadoPrecio')">Calculate</button>
+		<button onclick="actualizarFechas('fechaEntrega', 'resultadoFechaCorta', 'resultadoFechaLarga')">Format Dates</button>
+      </section>
+
+      <section>
+        <h2>Result</h2>
+        <p>Total price: <span id="resultadoPrecio"></span></p> <!-- ReqI9 -->
+        <p>Decimal formatted total: <span id="resultadoDecimal"></span></p> <!-- ReqI8 -->
+        <p>Short format date: <span id="resultadoFechaCorta"></span></p> <!-- ReqI10 -->
+        <p>Long format date: <span id="resultadoFechaLarga"></span></p>
+
+        <div class="destacado">All models include a free basic warranty!</div> <!-- ReqI11 -->
+      </section>
+    </main>
+
+	<section>
+	  <h2>Available Models</h2>
+	  <p>Click on the base price of the car you're interested in to use it in the price calculator below (you can also write it manually).</p>
+	  <table border="1">
+		<thead>
+		  <tr>
+			<th>Model</th>
+			<th>Base Price ($)</th>
+			<th>Engine Type</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+			<td>Tesla Model 3</td>
+			<td class="precio-click">50.000</td>
+			<td>Electric</td>
+		  </tr>
+		  <tr>
+			<td>Cupra Formentor</td>
+			<td class="precio-click">38.500</td>
+			<td>Hybrid</td>
+		  </tr>
+		  <tr>
+			<td>Hyundai i30 N</td>
+			<td class="precio-click">36.000</td>
+			<td>Gasoline</td>
+		  </tr>
+		  <tr>
+			<td>Ferrari SF90 Stradale</td>
+			<td class="precio-click">450.000</td>
+			<td>Plug-in Hybrid</td>
+		  </tr>
+		</tbody>
+	  </table>
+	</section>
+  </div>
+</body>
+</html>
